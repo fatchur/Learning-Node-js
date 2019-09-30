@@ -1,0 +1,14 @@
+.rowC{
+  display:flex; flex-direction:col;
+}
+
+.SidebarPosition{
+  position: "absolute";
+  min-height: 100%;
+  min-width: 20%;
+  margin: 0px 0;
+}
+
+.CameraPosition{
+  margin: 0 auto;
+}

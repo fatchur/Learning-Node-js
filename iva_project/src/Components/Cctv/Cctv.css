@@ -1,0 +1,26 @@
+@media all and (min-width: 100px) {
+
+    .Cctv form {
+      margin: 0 auto;
+      max-height: 600px;
+      max-width: 400px;
+      background: radial-gradient(ellipse farthest-corner at center top,  #e6e6e6 5%, #f8f8f7 95%);
+      border-radius: 15px;
+      transform: translate(0%, 10%)
+    }
+
+    .Cctv img{
+      width: 50%;
+      height: auto;
+      padding: 5%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .Input-Ip{
+      color: rgb(14, 12, 12);
+      padding: 10%;
+    }
+
+
+  }
