@@ -2,6 +2,8 @@
     <div class="navbar">
         <nuxt-link to="/"> Home </nuxt-link>
         <nuxt-link to="/products"> Product </nuxt-link>
+        <nuxt-link to="/posts"> Posts </nuxt-link>
+        <nuxt-link to="/about"> About Us </nuxt-link>
     </div>
 </template>
 
@@ -15,7 +17,6 @@
         top: 0;
         font-size: 100%;
         font-style: normal;
-        font-family: "Times New Roman";
         }
 
         /* Style the navigation bar links */

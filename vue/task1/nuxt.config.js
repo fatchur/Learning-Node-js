@@ -11,20 +11,7 @@ export default {
             { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
         ],
         link: [
-            { rel: 'dns-prefetch', href: `//surmon.me` },
-            { rel: 'dns-prefetch', href: '//api.surmon.me' },
-            { rel: 'dns-prefetch', href: '//cdn.surmon.me' },
-            { rel: 'dns-prefetch', href: '//static.surmon.me' },
-            { rel: 'dns-prefetch', href: '//at.alicdn.com' },
-            { rel: 'dns-prefetch', href: '//fonts.gstatic.com' },
-            { rel: 'dns-prefetch', href: '//adservice.google.com' },
-            { rel: 'dns-prefetch', href: '//fonts.googleapis.com' },
-            { rel: 'dns-prefetch', href: '//googleads.g.doubleclick.net' },
-            { rel: 'dns-prefetch', href: '//www.google-analytics.com' },
-            { rel: 'dns-prefetch', href: '//tpc.googlesyndication.com' },
-            { rel: 'dns-prefetch', href: '//pagead2.googlesyndication.com' },
-            { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-            { rel: 'author', type: 'text/plain', href: '/humans.txt' },
+            { rel: "stylesheet", href: "https://fonts.googleapis.com/css?family=Playfair+Display&display=swap" },
             { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
         ]
     },
