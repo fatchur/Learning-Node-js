@@ -1,23 +1,11 @@
 <template>
   <div class="home-page">
     <div>
-      <div class="intro"> 
+      <section class="intro"> 
         <h1> Get the latest tech news .... </h1>
-      </div>
-      <div class="featured-posts"> 
-          <PostPreview id="1"
-                       title="First Post"
-                       previewText="dhhaalalsjsnalsknansnbahj"
-                       thumbnail="https://ichef.bbci.co.uk/news/660/cpsprodpb/B7B0/production/_101542074_gettyimages-956391468.jpg"/>
-          <PostPreview id="2"
-                       title="Second Post"
-                       previewText="fhsiswolshdoalkjadjalasidjnsi"
-                       thumbnail="https://c402277.ssl.cf1.rackcdn.com/photos/593/images/portrait_overview/XL_264491.jpg?1345574849"/>
-          <PostPreview id="3"
-                       title="Thirdt"
-                       previewText="sjsiwow9wiuw98wjjwkk"
-                       thumbnail="https://ichef.bbci.co.uk/news/660/cpsprodpb/B7B0/production/_101542074_gettyimages-956391468.jpg"/>
-      </div>
+      </section>
+      <PostList :isAdmin="isAdmin"
+                :posts="loadedPosts"/>
     </div>
 
     <div class="product">
@@ -27,12 +15,35 @@
 </template>
 
 <script>
-import PostPreview from '@/components/Posts/PostPreview.vue'
+import PostList from '@/components/Posts/PostList.vue'
 
 export default {
   components: {
-    PostPreview
+    PostList
+  },
+
+  asyncData(context, callback){
+    setTimeout(() => {
+      callback( null,
+        {isAdmin:false,
+          loadedPosts: [
+            { id:'1', 
+              title: 'post 1', 
+              previewText: 'This is post 1', 
+              thumbnail:'https://ichef.bbci.co.uk/news/660/cpsprodpb/B7B0/production/_101542074_gettyimages-956391468.jpg'},
+            { id:'2', 
+              title: 'post 3', 
+              previewText: 'This is post 2', 
+              thumbnail:'https://ichef.bbci.co.uk/news/660/cpsprodpb/B7B0/production/_101542074_gettyimages-956391468.jpg'},
+            { id:'3', 
+              title: 'post 3', 
+              previewText: 'This is post 3', 
+              thumbnail:'https://ichef.bbci.co.uk/news/660/cpsprodpb/B7B0/production/_101542074_gettyimages-956391468.jpg'}]
+        });
+        }, 500);
   }
+
+  
 }
 </script>
 
@@ -66,16 +77,6 @@ export default {
   .intro h1 {
     font-size: 2rem;
   }
-}
-
-.featured-posts {
-  margin-top: 50px;
-  display: flex;
-  padding: 20px;
-  box-sizing: border-box;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
 }
 
 .product{

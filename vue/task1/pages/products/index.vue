@@ -1,6 +1,6 @@
 <template>
     <section class="container">
-        <div>
+        <div class="product">
             <input type="text" v-model="pid">
             <button @click="onLoadId"> Load Product </button>
         </div>
@@ -20,3 +20,9 @@ export default{
     }
 }
 </script>
+
+<style scoped>
+    .product{   
+        margin-top: 5%;
+    }
+</style>

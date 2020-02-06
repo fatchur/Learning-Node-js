@@ -3,6 +3,7 @@
         <nuxt-link to="/"> Home </nuxt-link>
         <nuxt-link to="/products"> Product </nuxt-link>
         <nuxt-link to="/posts"> Posts </nuxt-link>
+        <nuxt-link to="/admin"> Admin </nuxt-link>
         <nuxt-link to="/about"> About Us </nuxt-link>
     </div>
 </template>
