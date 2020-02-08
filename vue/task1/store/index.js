@@ -17,14 +17,14 @@ const createStore = () => {
         },
         actions: {
             // set isAdmin by default
+            /*
             nuxtServerInit(vueContext, context) {
                 return new Promise((resolve, reject) => {
                     setTimeout(() => {
                         vueContext.commit('setAdmin', false)
-                        console.log('hereeeeeeeeeeeeee')
                     }, 100);
                 })
-            },
+            },*/
             setPosts(vueContext, posts) {
                 vueContext.commit('setPosts', posts);
             },

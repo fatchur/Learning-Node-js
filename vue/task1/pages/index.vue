@@ -16,12 +16,10 @@
 
 <script>
 import PostList from '@/components/Posts/PostList.vue'
-
 export default {
   components: {
     PostList
   },
-
   asyncData(context)  {
     return new Promise((resolve, reject)=>{
        setTimeout(() => {
@@ -67,7 +65,6 @@ export default {
   background-position: center;
   background-size: cover;
 }
-
 .intro h1 {
   position: absolute;
   top: 10%;
@@ -82,15 +79,12 @@ export default {
   box-sizing: border-box;
   border: 1px solid black;
 }
-
 @media (min-width: 768px) {
   .intro h1 {
     font-size: 2rem;
   }
 }
-
 .product{
   text-align: center;
 }
-
 </style>
