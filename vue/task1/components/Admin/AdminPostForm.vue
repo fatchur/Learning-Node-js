@@ -1,12 +1,12 @@
 <template>
-    <form>
+    <form @submit.prevent="onSave">
         <AppControlInput v-model="editedPost.author">Author Name</AppControlInput>
         <AppControlInput v-model="editedPost.title">Title</AppControlInput>
         <AppControlInput v-model="editedPost.thumbnailLink">Thumbnail Link</AppControlInput>       
         <AppControlInput
                 control-type="textarea"
                 v-model="editedPost.content">Content</AppControlInput> 
-        <AppButton type="submit" @click="onSave">Save</AppButton> 
+        <AppButton type="submit">Save</AppButton> 
         <AppButton
                 type="button"
                 style="margin-left: 10px"
@@ -48,6 +48,7 @@ export default {
 
     methods: {
         onSave() {
+            this.$emit('submit', this.editedPost)
             console.log(this.editedPost);
         },
         onCancel() {
