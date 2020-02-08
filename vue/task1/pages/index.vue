@@ -22,28 +22,38 @@ export default {
     PostList
   },
 
-  asyncData(context, callback){
-    setTimeout(() => {
-      callback( null,
-        {isAdmin:false,
-          loadedPosts: [
-            { id:'1', 
-              title: 'post 1', 
-              previewText: 'This is post 1', 
-              thumbnail:'https://ichef.bbci.co.uk/news/660/cpsprodpb/B7B0/production/_101542074_gettyimages-956391468.jpg'},
-            { id:'2', 
-              title: 'post 3', 
-              previewText: 'This is post 2', 
-              thumbnail:'https://ichef.bbci.co.uk/news/660/cpsprodpb/B7B0/production/_101542074_gettyimages-956391468.jpg'},
-            { id:'3', 
-              title: 'post 3', 
-              previewText: 'This is post 3', 
-              thumbnail:'https://ichef.bbci.co.uk/news/660/cpsprodpb/B7B0/production/_101542074_gettyimages-956391468.jpg'}]
-        });
-        }, 500);
-  }
+  asyncData(context)  {
+    return new Promise((resolve, reject)=>{
+       setTimeout(() => {
+        resolve(
+          {isAdmin:false,
+            loadedPosts: [
+              { id:'1', 
+                title: 'post 1', 
+                previewText: 'This is post 1', 
+                thumbnail:'https://ichef.bbci.co.uk/news/660/cpsprodpb/B7B0/production/_101542074_gettyimages-956391468.jpg'},
+              { id:'2', 
+                title: 'post 2', 
+                previewText: 'This is post 2', 
+                thumbnail:'https://ichef.bbci.co.uk/news/660/cpsprodpb/B7B0/production/_101542074_gettyimages-956391468.jpg'},
+              { id:'3', 
+                title: 'post 3', 
+                previewText: 'This is post 3', 
+                thumbnail:'https://ichef.bbci.co.uk/news/660/cpsprodpb/B7B0/production/_101542074_gettyimages-956391468.jpg'}]
+          });
+          }, 500);
+    }).then(data=>{
+        return data
+    }).catch(()=>{
+      context.error(new Error())
+    });
+  },
 
-  
+  created() {
+      this.$store.dispatch('setPosts', this.loadedPosts);
+      this.$store.dispatch('setAdmin', this.isAdmin);
+      console.log("----")
+  }
 }
 </script>
 
