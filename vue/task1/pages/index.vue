@@ -46,10 +46,11 @@ export default {
       context.error(new Error())
     });
   },
+
   created() {
       this.$store.dispatch('setPosts', this.loadedPosts);
       this.$store.dispatch('setAdmin', this.isAdmin);
-      console.log("==> main page update store")
+      console.log("----")
   }
 }
 </script>
