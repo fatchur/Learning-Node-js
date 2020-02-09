@@ -19,9 +19,8 @@ export default {
 
     methods: {
       onSubmitted(postData) {
-        console.log('=============== here')
         axios.post('https://task1-d2d88.firebaseio.com/post.json', postData)
-          .then(result => console.log("-->" + result))
+          .then(result => console.log("--> Post Result: " + result))
           .catch(e => console.log(e))
       }
     }

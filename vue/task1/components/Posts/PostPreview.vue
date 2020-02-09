@@ -4,8 +4,8 @@
             <div class="post-thumbnail" 
                  :style="{backgroundImage: 'url(' + thumbnail + ')'}"> </div>
             <div class="post-content"> 
-              <h1> {{title}} </h1>
-              <p> {{previewText}} </p>
+              <h2> {{title}} </h2>
+              <p> {{contentPreview}} </p>
             </div>
         </article>
     </nuxt-link> 
@@ -27,12 +27,13 @@
 
     @media (min-width: 850px) {
     .post-preview {
-        width: 400px;
-        margin: 10px;}
+        width: 30%;
+        height: 400px;
+        margin: 20px;}
     }
     .post-thumbnail {
     width: 100%;
-    height: 200px;
+    height: 300px;
     background-position: center;
     background-size: cover;
     }
@@ -64,7 +65,11 @@ export default {
             type: String,
             required: true
         },
-        previewText: {   
+        content: {
+            type: String,
+            required: true
+        },
+        contentPreview: {   
             type: String,
             required: true
         },

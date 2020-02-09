@@ -32,19 +32,18 @@ export default {
 
 <style scoped>
 .input-control {
-  margin: 10px 0;
+  margin: 0px;
 }
 
 .input-control label {
-  display: block;
+  display: flex;
   font-weight: bold;
 }
 
 .input-control input,
 .input-control textarea {
-  display: block;
+  display: flex;
   width: 100%;
-  box-sizing: border-box;
   font: inherit;
   border: 1px solid #ccc;
   padding: 5px;

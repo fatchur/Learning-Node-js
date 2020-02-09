@@ -7,10 +7,13 @@
 
 <script>
 import PostList from '@/components/Posts/PostList.vue'
+
+
 export default {
     components: {
         PostList
     },
+    /*
     fetch(context){
         return new Promise((resolve, reject)=>{
             setTimeout(() => {
@@ -35,11 +38,10 @@ export default {
             // fetch can't integrate with vue component
             context.store.dispatch('setPosts', data.loadedPosts);
             context.store.dispatch('setAdmin', data.isAdmin) 
-            console.log("==> post page update store")
         }).catch(()=>{
             context.error(new Error())
         })
-    },
+    },*/
     computed: {
         loadedPosts() {
             return this.$store.getters.loadedPosts;

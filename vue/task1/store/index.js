@@ -1,4 +1,5 @@
 import Vuex from 'vuex'
+import axios from 'axios'
 
 
 const createStore = () => {
@@ -16,15 +17,21 @@ const createStore = () => {
             }
         },
         actions: {
-            // set isAdmin by default
-            /*
+            // example of server init
+            // usually used for storing the config variable
+            // executed once in the server at initialization
             nuxtServerInit(vueContext, context) {
-                return new Promise((resolve, reject) => {
-                    setTimeout(() => {
-                        vueContext.commit('setAdmin', false)
-                    }, 100);
-                })
-            },*/
+                return axios.get('https://task1-d2d88.firebaseio.com/post.json')
+                    .then(res => {
+                        const postArray = []
+                        for (const key in res.data) {
+                            postArray.push({...res.data[key], id: key })
+                        };
+                        vueContext.commit('setPosts', postArray)
+                            //console.log(vueContext.state.loadedPosts)
+                    })
+                    .catch(e => context.error(e))
+            },
             setPosts(vueContext, posts) {
                 vueContext.commit('setPosts', posts);
             },

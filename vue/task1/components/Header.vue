@@ -12,7 +12,7 @@
 <style scoped>
     .navbar {
         overflow: hidden;
-        background-color: DodgerBlue;
+        background-color: #161B21;
         position: sticky;
         position: -webkit-sticky;
         top: 0;
@@ -21,28 +21,29 @@
         }
 
         /* Style the navigation bar links */
-        .navbar a {
+    .navbar a {
         float: left;
         display: block;
         color: white;
         text-align: center;
-        padding: 14px 20px;
+        padding: 20px 20px;
         text-decoration: none;
+        font-size: 16px;
         }
 
-        /* Right-aligned link */
-        .navbar a.right {
+    /* Right-aligned link */
+    .navbar a.right {
         float: right;
         }
 
-        /* Change color on hover */
-        .navbar a:hover {
-        background-color: rgb(102, 153, 255);
+    /* Change color on hover */
+    .navbar a:hover {
+        background-color: #F4A950;
         color: black;
         }
 
-        /* Active/current link */
-        .navbar a.active {
+    /* Active/current link */
+    .navbar a.active {
         background-color: #666;
         color: white;
         }
