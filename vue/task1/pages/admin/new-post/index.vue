@@ -19,7 +19,7 @@ export default {
 
     methods: {
       onSubmitted(postData) {
-        axios.post('https://task1-d2d88.firebaseio.com/post.json', postData)
+        axios.post(process.env.baseUrl + '/post.json', postData)
           .then(result => console.log("--> Post Result: " + result))
           .catch(e => console.log(e))
       }

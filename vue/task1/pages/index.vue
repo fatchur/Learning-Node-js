@@ -25,7 +25,7 @@ export default {
     },
     asyncData(context)  {
         // the return of axios is also a promise
-        return axios.get('https://task1-d2d88.firebaseio.com/post.json')
+        return axios.get(process.env.baseUrl + '/post.json')
                     .then(res => {
                         const postArray = []
                         for (const key in res.data) {

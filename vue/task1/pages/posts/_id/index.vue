@@ -20,7 +20,7 @@ export default {
     asyncData(context)  {
         // the return of axios is also a promise
         var id = context.route.params.id
-        return axios.get('https://task1-d2d88.firebaseio.com/post/' + id +'.json')
+        return axios.get(process.env.baseUrl + '/post/' + id +'.json')
                     .then(res => {
                         return {loadedPost: res.data}
                     })

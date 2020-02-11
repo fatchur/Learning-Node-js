@@ -20,7 +20,7 @@ export default {
     asyncData(context)  {
         console.log(context.route.params.postId)
         var postId = context.route.params.postId;
-        return axios.get('https://task1-d2d88.firebaseio.com/post/' + postId + '.json')
+        return axios.get( process.env.baseUrl + '/post/' + postId + '.json')
                   .then(res => {
                       console.log(res.data)
                       return {loadedPost: res.data}
@@ -30,7 +30,7 @@ export default {
 
     methods: {
       onSubmitted(postData) {
-        axios.put('https://task1-d2d88.firebaseio.com/post/' + this.$route.params.postId + '.json', postData)
+        axios.put(process.env.baseUrl + '/post/' + this.$route.params.postId + '.json', postData)
           .then(result => console.log("--> Post Result: " + result))
           .catch(e => console.log(e))
       }

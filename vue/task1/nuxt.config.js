@@ -4,7 +4,7 @@ export default {
      ** Headers of the page
      */
     head: {
-        title: process.env.npm_package_name || '',
+        title: 'Learn Javascript',
         meta: [
             { charset: 'utf-8' },
             { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -18,21 +18,34 @@ export default {
     /*
      ** Customize the progress-bar color
      */
-    loading: { color: '#fff' },
+    loading: { color: '#FAC50F', failedColor: 'red', height: '4px' },
+    /* If we are using spa mode
+    loadingIndicator: {
+        name: 'circle',
+        color: '#FAC50F'
+    },*/
+
     /*
      ** Global CSS
      */
-    css: [],
+    css: [
+        '~assets/styles/main.css',
+    ],
+
     /*
-     ** Plugins to load before mounting the App
+     ** plugin
+     ** USUALY used for setting vue/nuxt components as a global variable
+     ** So the pages/compnents don't need to declare it again
+     ** Plugin wil be rendered before all vue components/pages.
      */
     plugins: [],
-    /*
-     ** Nuxt.js dev-modules
-     */
+
     buildModules: [],
+
     /*
      ** Nuxt.js modules
+     ** Same with plugin, bUT
+     ** Usually developed by communities
      */
     modules: [],
     /*
@@ -43,5 +56,17 @@ export default {
          ** You can extend webpack config here
          */
         extend(config, ctx) {}
+    },
+
+    // nuxt environtment setup
+    env: {
+        baseUrl: process.env.BASE_URL || "https://task1-d2d88.firebaseio.com",
+    },
+
+    // nuxt inter-route transition
+    pageTransition: {
+        name: 'fade',
+        mode: 'out-in'
     }
+
 }
