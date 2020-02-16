@@ -1,5 +1,5 @@
 export default {
-    mode: 'universal',
+    mode: 'spa',
     /*
      ** Headers of the page
      */
@@ -61,12 +61,19 @@ export default {
     // nuxt environtment setup
     env: {
         baseUrl: process.env.BASE_URL || "https://task1-d2d88.firebaseio.com",
+        fbAPIKey: "AIzaSyC08XCmZGYJvgmwqSJo8BM-yz2whdNdP-w"
     },
 
     // nuxt inter-route transition
     pageTransition: {
         name: 'fade',
         mode: 'out-in'
-    }
+    },
+
+    // add midleware to router example
+    /*
+    router: {
+        middleware: 'log',
+    }*/
 
 }

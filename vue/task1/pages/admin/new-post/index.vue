@@ -19,7 +19,7 @@ export default {
 
     methods: {
       onSubmitted(postData) {
-        axios.post(process.env.baseUrl + '/post.json', postData)
+        axios.post(process.env.baseUrl + '/post.json?auth=' + this.$store.state.idToken, postData)
           .then(result => console.log("--> Post Result: " + result))
           .catch(e => console.log(e))
       }

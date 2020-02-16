@@ -24,6 +24,8 @@ export default {
         AppButton
     },
 
+    middleware: ['auth'],
+
     asyncData(context)  {
       // the return of axios is also a promise
       return axios.get(process.env.baseUrl + '/post.json')

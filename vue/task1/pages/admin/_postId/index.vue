@@ -13,28 +13,30 @@ import axios from 'axios'
 
 
 export default {
-    components: {
-        AdminPostForm
-    },
+  middleware: ['auth'],
+  
+  components: {
+      AdminPostForm
+  },
 
-    asyncData(context)  {
-        console.log(context.route.params.postId)
-        var postId = context.route.params.postId;
-        return axios.get( process.env.baseUrl + '/post/' + postId + '.json')
-                  .then(res => {
-                      console.log(res.data)
-                      return {loadedPost: res.data}
-                  })
-                  .catch(e => context.error(e))
-    },
+  asyncData(context)  {
+      console.log(context.route.params.postId)
+      var postId = context.route.params.postId;
+      return axios.get( process.env.baseUrl + '/post/' + postId + '.json')
+                .then(res => {
+                    console.log(res.data)
+                    return {loadedPost: res.data}
+                })
+                .catch(e => context.error(e))
+  },
 
-    methods: {
-      onSubmitted(postData) {
-        axios.put(process.env.baseUrl + '/post/' + this.$route.params.postId + '.json', postData)
-          .then(result => console.log("--> Post Result: " + result))
-          .catch(e => console.log(e))
-      }
+  methods: {
+    onSubmitted(postData) {
+      axios.put(process.env.baseUrl + '/post/' + this.$route.params.postId + '.json?auth=' + this.$store.state.idToken, postData)
+        .then(result => console.log("--> Post Result: " + result))
+        .catch(e => console.log(e))
     }
+  }
 
 }
 </script>

@@ -15,7 +15,9 @@
   export default{
     components: {
       Header
-    }
+    },
+    
+    middleware: 'log',
   }
 </script>
 

@@ -23,6 +23,9 @@ export default {
     components: {
         PostList
     },
+    // example of adding midleware to the page
+    // middleware: 'log',
+
     asyncData(context)  {
         // the return of axios is also a promise
         return axios.get(process.env.baseUrl + '/post.json')
